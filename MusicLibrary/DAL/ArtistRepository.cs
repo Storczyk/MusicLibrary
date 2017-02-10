@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MusicLibrary.Models;
-
+using System.Web.Mvc;
 namespace MusicLibrary.DAL
 {
     public class ArtistRepository : IArtistRepository
@@ -44,7 +44,7 @@ namespace MusicLibrary.DAL
                 {
                     ArtistId = i.ArtistId,
                     Name = i.Name
-                }).ToList();
+                }).OrderBy(i => i.Name).ToList();
             }
         }
 

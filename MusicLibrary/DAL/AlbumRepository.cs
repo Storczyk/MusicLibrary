@@ -75,7 +75,7 @@ namespace MusicLibrary.DAL
                     artist = new ArtistResponse { Name = i.artist.Name, ArtistId = i.artist.ArtistId },
                     genre = i.genre,
                     Title = i.Title
-                }).ToList();
+                }).OrderBy(i => i.Title).ToList();
             }
         }
 
