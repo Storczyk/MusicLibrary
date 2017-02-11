@@ -483,7 +483,7 @@
         </member>
         <member name="T:MusicLibrary.Controllers.AlbumController">
             <summary>
-            Adding, Editing, Deleting, Getting By Id and All albums
+            Adding, Editing, Deleting, Getting album By Id and All albums from Db
             </summary>
         </member>
         <member name="M:MusicLibrary.Controllers.AlbumController.AddAlbum(MusicLibrary.Models.AlbumRequest)">
@@ -501,19 +501,57 @@
             <param name="id">ID of edited album</param>
             <returns></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:MusicLibrary.Controllers.AlbumController.GetAlbums" -->
+        <member name="M:MusicLibrary.Controllers.AlbumController.GetAlbums">
+            <summary>
+            Gets all albums
+            </summary>
+            <returns>Collection of AlbumResponse</returns>
+        </member>
         <member name="M:MusicLibrary.Controllers.AlbumController.GetById(System.Int32)">
             <summary>
             Get album by Id
             </summary>
             <param name="id">ID of album</param>
-            <returns>AlbumResponse</returns>
+            <returns>AlbumResponseDetails</returns>
         </member>
         <member name="M:MusicLibrary.Controllers.AlbumController.Delete(System.Int32)">
             <summary>
             Deletes album from Database
             </summary>
             <param name="id">ID of deleted album</param>
+            <returns></returns>
+        </member>
+        <member name="T:MusicLibrary.Controllers.ArtistController">
+            <summary>
+            Adding, Editing, Getting artist By Id and All Artists from db
+            </summary>
+        </member>
+        <member name="M:MusicLibrary.Controllers.ArtistController.Edit(MusicLibrary.Models.ArtistRequest,System.Int32)">
+            <summary>
+            Editing existing artist
+            </summary>
+            <param name="artist">new artist info</param>
+            <param name="id">id of artist to edit</param>
+            <returns></returns>
+        </member>
+        <member name="M:MusicLibrary.Controllers.ArtistController.GetArtists">
+            <summary>
+            Gets all Artits
+            </summary>
+            <returns>Collection of ArtistResponse</returns>
+        </member>
+        <member name="M:MusicLibrary.Controllers.ArtistController.GetById(System.Int32)">
+            <summary>
+            Gets artist by id
+            </summary>
+            <param name="id">artist id</param>
+            <returns>ArtistResponseDetails</returns>
+        </member>
+        <member name="M:MusicLibrary.Controllers.ArtistController.Delete(System.Int32)">
+            <summary>
+            Deletes artist from db
+            </summary>
+            <param name="id">id of artist to delete</param>
             <returns></returns>
         </member>
         <member name="T:MusicLibrary.DAL.Album">
