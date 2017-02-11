@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MusicLibrary.DAL
 {
-    interface IArtistRepository
+    public interface IArtistRepository
     {
         IEnumerable<ArtistResponse> GetAll();
         ArtistResponseDetails GetById(int id);

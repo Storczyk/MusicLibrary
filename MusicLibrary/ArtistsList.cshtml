@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Artists</title>
+    <script src="jquery-2.0.3.min.js"></script>
+</head>
+<body>
+    <div>
+        <ul id="artists"></ul>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '../artists',
+                type: 'GET',
+                success: function (result) {
+                    $.each(result, function () {
+                        $('#artists').append(
+                            $('<li>').append(
+                                $('<a>', { text: this.Name, href: 'artist/' + this.ArtistId }))
+                        )
+                    }
+                )
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

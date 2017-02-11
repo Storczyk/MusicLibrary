@@ -18,7 +18,11 @@ namespace MusicLibrary.Controllers
     {
         private ArtistService _artistService;
         private IArtistRepository _artistRepository;
-        public ArtistController() { _artistService = new ArtistService(); _artistRepository = new ArtistRepository(); }
+        public ArtistController(IArtistRepository _rep, ArtistService _ser)
+        {
+            _artistService = _ser;
+            _artistRepository = _rep;
+        }
 
         /// <summary>
         /// Editing existing artist

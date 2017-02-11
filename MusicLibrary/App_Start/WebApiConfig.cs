@@ -1,8 +1,9 @@
-﻿using System;
+﻿
+using MusicLibrary.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-
 namespace MusicLibrary
 {
     public static class WebApiConfig
@@ -10,7 +11,6 @@ namespace MusicLibrary
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
             // Web API routes
             config.MapHttpAttributeRoutes();
 

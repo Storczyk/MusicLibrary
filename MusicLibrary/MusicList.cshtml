@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Albums</title>
+    <script src="jquery-2.0.3.min.js"></script>
+</head>
+<body>
+    <div>
+        <ul id="albums"></ul>
+        <a href="~/NewAlbum.html">Add new album</a>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '../albums',
+                type: 'GET',
+                success: function (result) {
+                    $.each(result, function () {
+                        $('#albums').append(
+                            $('<li>').append(
+                                $('<a>', { text: this.Title + ', ' + this.genre + ', Artist: ' + this.artist.Name, href: 'album/' + this.AlbumId }))
+                        )
+                    }
+                )
+                }
+            })
+        })
+        
+    </script>
+</body>
+</html>

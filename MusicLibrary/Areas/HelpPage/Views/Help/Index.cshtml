@@ -7,7 +7,9 @@
 
 @{
     ViewBag.Title = "ASP.NET Web API Help Page";
-
+    <div>
+        <p><a href="~/Index.html">Powrót</a></p>
+    </div>
     // Group APIs by controller
     ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
 }

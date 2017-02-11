@@ -12,6 +12,7 @@ namespace MusicLibrary
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            Bootstrapper.Initialise();
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }

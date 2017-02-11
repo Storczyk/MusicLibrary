@@ -1,4 +1,5 @@
-﻿using MusicLibrary.DAL;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MusicLibrary.DAL;
 using MusicLibrary.Filters;
 using MusicLibrary.Models;
 using MusicLibrary.Services;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Results;
 
 namespace MusicLibrary.Controllers
 {
@@ -16,9 +18,14 @@ namespace MusicLibrary.Controllers
     /// </summary>
     public class AlbumController : ApiController
     {
+
         private AlbumService _albumService;
         private IAlbumRepository _albumRepository;
-        AlbumController() { _albumService = new AlbumService(); _albumRepository = new AlbumRepository(); } 
+        public AlbumController(IAlbumRepository _rep, AlbumService _ser)
+        {
+            _albumService = _ser;
+            _albumRepository = _rep;
+        }
 
         /// <summary>
         /// Adds 'album' to Database
@@ -28,7 +35,7 @@ namespace MusicLibrary.Controllers
         [HttpPost, Route("album"), ModelValidation]
         public IHttpActionResult AddAlbum([FromBody] AlbumRequest album)
         {
-            _albumService.Add(album,_albumRepository);
+            _albumService.Add(album, _albumRepository);
             return Ok();
         }
 
